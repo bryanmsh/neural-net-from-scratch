@@ -11,12 +11,11 @@ class NeuralNetwork:
         for i in self.layers:
             a = i.forward(a) # loop through forwarding with respective input for each layer
 
-        nn.res = a
+        self.res = a
         return a
 
-
 if __name__ == "__main__":
-    nn = NeuralNetwork([784,16,16,10])
+    nn = NeuralNetwork([784,20,16,10]) # we can choose any number of parameters because of the way this is structured
     test = np.random.rand(784)
     nn.forward(test)
-    print(len(nn.res))
+    print(nn.res)

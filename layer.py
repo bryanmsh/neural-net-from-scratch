@@ -1,7 +1,7 @@
 import numpy as np
 
 def sigmoid(num):
-    return 1 /(1+np.exp(-num))
+    return 1 /(1+np.exp(-num)) # activation function to smoothen inputs
 
 class Layer:
 
