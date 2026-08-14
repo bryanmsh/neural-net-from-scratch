@@ -12,8 +12,8 @@ class Layer:
          # scale down by .01 so weighted sum is not extremely large
         self.b = np.zeros(output_size) # initialize all biases as zero
 
-    def forward(self, input):
-        self.ws = self.w @ input + self.b # multiply inputs and weights for each neuron and add bias to get weighted sum
+    def forward(self, a): # input activation
+        self.ws = self.w @ a + self.b # multiply inputs and weights for each neuron and add bias to get weighted sum
         # print(self.ws)
         self.output = sigmoid(self.ws) # apply sigmoid activation function to get output
         return self.output
