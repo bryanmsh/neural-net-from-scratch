@@ -15,7 +15,7 @@ class NeuralNetwork:
         return a
 
 if __name__ == "__main__":
-    nn = NeuralNetwork([784,20,16,10]) # we can choose any number of parameters because of the way this is structured
+    nn = NeuralNetwork([784,16,16,10]) # we can choose any number of parameters because of the way this is structured
     test = np.random.rand(784)
     nn.forward(test)
     print(nn.res)
