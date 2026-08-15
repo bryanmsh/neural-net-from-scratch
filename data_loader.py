@@ -31,5 +31,11 @@ def one_hot(labels, class_count=10):
     # looks like [0, 0, 0, 0, 1, 0, 0, 0, 0] representing 5
     return encoded
 
+training_labels = load_labels("./MNIST/train-labels-idx1-ubyte")
+training_images = load_img("./MNIST/train-images-idx3-ubyte")
+
+test_labels = load_labels("./MNIST/t10k-labels-idx1-ubyte")
+test_images = load_img("./MNIST/t10k-images-idx3-ubyte")
+
 if __name__ == "__main__":
     pass
