@@ -22,4 +22,4 @@ if __name__ == "__main__":
     for image, label in zip(training_images, training_labels): 
         # iterate through image and label at the same time, so the label is attached to the image
         output = network.forward(image)
-        
+        print(label, output)
