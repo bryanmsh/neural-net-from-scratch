@@ -3,6 +3,9 @@ import numpy as np
 def sigmoid(num):
     return 1 /(1+np.exp(-num)) # activation function to smoothen inputs
 
+def sigmoid_deriv(num):
+    return sigmoid(num)*(1-sigmoid(num)) # derivative of sigmoid function
+
 class Layer:
 
     def __init__(self, input_size, output_size):
@@ -13,11 +16,26 @@ class Layer:
         self.B = np.zeros(output_size) # initialize all biases as zero
 
     def forward(self, a): # input activation
+        self.a_prev = a # store activation from previous layer
         self.ws = self.W @ a + self.B # multiply inputs and weights for each neuron and add bias to get weighted sum
         # print(self.ws)
         self.output = sigmoid(self.ws) # apply sigmoid activation function to get output
         return self.output
 
+    def backward(self, delta_next, W_next=None):
+        if W_next is not None:
+            delta = (delta_next @ W_next) * sigmoid_deriv(self.ws) 
+            # finds delta of this layer (post sigmoid delta)
+            # and applies sigmoid derivative function to get back to pre sigmoid delta
+        else: # means this is the output layer and nothing is in front of it
+            delta = delta_next # delta_next given by network from cost function
+
+        self.dcdB = delta # saves bias gradient
+        self.dcdW = np.outer(delta, self.a_prev) 
+        # saves weight gradients 
+        # outer product of deltas and previous activations
+        return delta, self.W
+        
 
 if __name__ == "__main__":
     layer = Layer(784,16)
