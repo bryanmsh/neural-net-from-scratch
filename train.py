@@ -52,4 +52,4 @@ if __name__ == "__main__":
     # print(cost(network.forward(training_images[0]), training_labels[0]))
     # print(avg_cost(network, training_images, training_labels))
 
-    train(network, training_images, training_labels, .05, 10)
+    train(network, training_images, training_labels, .01, 5)
