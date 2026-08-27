@@ -16,7 +16,7 @@ def avg_cost(network, img_set, label_set):
     return (total)
 
 def train(network, img_set, label_set, learning_rate, num_epochs=7):
-    #load_params(network)
+    load_params(network)
     print(f"Initial average cost: {avg_cost(network, img_set, label_set)}")
     
     for epoch in range(1, num_epochs+1):
@@ -24,6 +24,7 @@ def train(network, img_set, label_set, learning_rate, num_epochs=7):
         for image, label in zip(img_set, label_set):
             output = network.forward(image)
             network.backward(output, label)
+            # forwards and backwards for each item in dataset
 
             for layer in network.layers:
                 layer.W -= learning_rate * layer.dcdW
@@ -33,7 +34,7 @@ def train(network, img_set, label_set, learning_rate, num_epochs=7):
             
         print(f"Average cost for epoch {epoch}: {avg_cost(network, img_set, label_set)}")
 
-    #save_params(network)
+    save_params(network)
         
 
 if __name__ == "__main__":
@@ -51,4 +52,4 @@ if __name__ == "__main__":
     # print(cost(network.forward(training_images[0]), training_labels[0]))
     # print(avg_cost(network, training_images, training_labels))
 
-    train(network, training_images, training_labels, .05, 5)
+    train(network, training_images, training_labels, .05, 10)
