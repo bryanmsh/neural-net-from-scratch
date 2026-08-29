@@ -56,12 +56,6 @@ if __name__ == "__main__":
     check_accuracy()
     # exit()
 
-    # training_labels = dl.load_labels("./MNIST/train-labels-idx1-ubyte")
-    # training_images = dl.load_img("./MNIST/train-images-idx3-ubyte")
-
-    # training_images = training_images / 255.0
-    # training_labels = dl.one_hot(training_labels)
-
     test_labels = dl.load_labels("./MNIST/t10k-labels-idx1-ubyte")
     test_images = dl.load_img("./MNIST/t10k-images-idx3-ubyte")
 
@@ -71,9 +65,8 @@ if __name__ == "__main__":
 
     network = nn.NeuralNetwork([784,16,16,10]) # create neural net
     load_params(network)
+    
     #output = network.forward(training_images[0]) # forward this row (this image)
-
-
     # np.set_printoptions(suppress=True, precision=6)
     # print(output)
     # print(training_labels[1]) 

@@ -48,8 +48,9 @@ if __name__ == "__main__":
     # label = np.array([0,1,0])
     # print((output-label)**2)
     network = nn.NeuralNetwork([784,16,16,10])
+    save_params(network)
     
     # print(cost(network.forward(training_images[0]), training_labels[0]))
     # print(avg_cost(network, training_images, training_labels))
 
-    train(network, training_images, training_labels, .01, 5)
+    train(network, training_images, training_labels, .03, 5)
