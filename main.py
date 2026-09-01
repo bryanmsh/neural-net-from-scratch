@@ -5,13 +5,7 @@ from params import save_params, load_params
 import train 
 import matplotlib.pyplot as plot
 
-def check_accuracy():
-    test_labels = dl.load_labels("./MNIST/t10k-labels-idx1-ubyte")
-    test_images = dl.load_img("./MNIST/t10k-images-idx3-ubyte")
-
-    network = nn.NeuralNetwork([784,16,16,10]) # create neural net
-    load_params(network)
-
+def check_accuracy(network, test_images, test_labels):
     count = len(test_labels)
     total = count
 
@@ -52,9 +46,8 @@ def check_accuracy():
     print(f"Accuracy: {total/count}")
 
 if __name__ == "__main__":
+    
 
-    check_accuracy()
-    # exit()
 
     test_labels = dl.load_labels("./MNIST/t10k-labels-idx1-ubyte")
     test_images = dl.load_img("./MNIST/t10k-images-idx3-ubyte")
@@ -64,7 +57,13 @@ if __name__ == "__main__":
 
 
     network = nn.NeuralNetwork([784,16,16,10]) # create neural net
+    
     load_params(network)
+
+    check_accuracy(network, test_images, test_labels)
+    # exit()
+
+    print(f"avg cost: {train.avg_cost(network, test_images, test_labels)}")
     
     #output = network.forward(training_images[0]) # forward this row (this image)
     # np.set_printoptions(suppress=True, precision=6)
