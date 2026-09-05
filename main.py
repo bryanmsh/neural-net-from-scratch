@@ -60,7 +60,7 @@ if __name__ == "__main__":
     
     load_params(network)
 
-    check_accuracy(network, test_images, test_labels)
+    #check_accuracy(network, test_images, test_labels)
     # exit()
 
     print(f"avg cost: {train.avg_cost(network, test_images, test_labels)}")
