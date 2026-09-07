@@ -1,4 +1,4 @@
-![alt text](2026-09-06 22-47.jpg)
+<img width="3150" height="1450" alt="2026-09-06 22-47" src="https://github.com/user-attachments/assets/254ec4ec-bff8-44ab-9171-28805fe59c8b" />
 
 description tba
 
