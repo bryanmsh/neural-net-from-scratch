@@ -5,4 +5,7 @@ description tba
 
 run main.py to test out the network
 
+<img width="1270" height="1054" alt="modeldemo" src="https://github.com/user-attachments/assets/797e9e58-c12c-414e-93e2-157379d10d1a" />
+
+
 run train.py to test out the training (on pre-existing parameters in params.npz)
