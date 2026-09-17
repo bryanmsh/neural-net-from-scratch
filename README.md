@@ -6,7 +6,7 @@
 [![Dataset](https://img.shields.io/badge/Dataset-MNIST-orange?style=flat-square)](http://yann.lecun.com/exdb/mnist/)
 [![Accuracy](https://img.shields.io/badge/Test%20Accuracy-~94.2%25-brightgreen?style=flat-square)]()
 
-A lightweight, fully modular deep feedforward neural network (multilayer perceptron) built entirely **from first principles** in Python using only **NumPy**. No PyTorch, TensorFlow, Keras, or autograd libraries were used—every forward pass, activation function, cost calculation, and backpropagation gradient is implemented by hand to understand perceptrons and backpropagation from the ground up.
+A lightweight, fully modular deep feedforward neural network (multilayer perceptron) built entirely **from first principles** in Python using only **NumPy**. No PyTorch, TensorFlow, Keras, or autograd libraries were used. Every forward pass, activation function, cost calculation, and backpropagation gradient is implemented by hand to understand perceptrons and backpropagation from the ground up.
 
 Trained and evaluated on the classic **MNIST handwritten digit dataset**, achieving **~94.2% accuracy** on the 10,000-image test set with a compact `784 -> 16 -> 16 -> 10` architecture.
 
