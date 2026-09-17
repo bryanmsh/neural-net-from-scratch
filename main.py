@@ -15,9 +15,9 @@ def check_accuracy(network, test_images, test_labels):
         
         np.set_printoptions(suppress=True, precision=6)
 
-
-        if np.argmax(output) != label:
-            #print(np.argmax(output), label)
+        target = np.argmax(label) if hasattr(label, "__len__") else label
+        if np.argmax(output) != target:
+            #print(np.argmax(output), target)
             
             # image = image.reshape(28, 28)
             # # reshape to the 28x28 image for visualization
@@ -26,7 +26,7 @@ def check_accuracy(network, test_images, test_labels):
             # # create both subplots 
             
             # ax1.imshow(image.reshape(28, 28), cmap="gray")
-            # ax1.set_title(f"Image of a {label}")
+            # ax1.set_title(f"Image of a {target}")
             # ax1.axis("off")
             # # config image plot
             
@@ -43,7 +43,9 @@ def check_accuracy(network, test_images, test_labels):
 
             total -= 1
 
-    print(f"Accuracy: {total/count}")
+    accuracy = total / count
+    print(f"Accuracy: {accuracy:.4f} ({accuracy * 100:.2f}%)")
+    return accuracy
 
 if __name__ == "__main__":
     
@@ -60,7 +62,7 @@ if __name__ == "__main__":
     
     load_params(network)
 
-    #check_accuracy(network, test_images, test_labels)
+    check_accuracy(network, test_images, test_labels)
     # exit()
 
     print(f"avg cost: {train.avg_cost(network, test_images, test_labels)}")

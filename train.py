@@ -16,7 +16,10 @@ def avg_cost(network, img_set, label_set):
     return (total)
 
 def train(network, img_set, label_set, learning_rate, num_epochs=7):
-    load_params(network)
+    try:
+        load_params(network)
+    except FileNotFoundError:
+        pass
     print(f"Initial average cost: {avg_cost(network, img_set, label_set)}")
     
     for epoch in range(1, num_epochs+1):

@@ -1,7 +1,7 @@
 import numpy as np
 
 def sigmoid(num):
-    return 1 /(1+np.exp(-num)) # activation function to smoothen inputs
+    return 1 / (1 + np.exp(-np.clip(num, -500, 500))) # activation function to smoothen inputs
 
 def sigmoid_deriv(num):
     return sigmoid(num)*(1-sigmoid(num)) # derivative of sigmoid function
