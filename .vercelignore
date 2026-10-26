@@ -1,0 +1,9 @@
+.venv/
+venv/
+__pycache__/
+MNIST/
+tests/
+*.pdf
+*.jpg
+modeldemo.png
+1params.npz

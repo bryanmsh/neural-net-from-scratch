@@ -10,6 +10,25 @@ A lightweight, fully modular deep feedforward neural network (multilayer percept
 
 Trained and evaluated on the classic **MNIST handwritten digit dataset**, achieving **~94.2% accuracy** on the 10,000-image test set with a compact `784 -> 16 -> 16 -> 10` architecture.
 
+
+---
+
+## Try the demo
+
+**[Open the digit recognition demo](https://neural-net-from-scratch-one.vercel.app)**
+
+Draw a single digit from 0-9 on the black 28 x 28 canvas using your mouse,
+pen, or finger, then click **Predict**. Click **Clear** to draw another digit.
+
+The demo shows:
+
+- The model's predicted digit.
+- Output activations for digits 0-9. These are sigmoid scores, not probabilities.
+- A preview of your drawing after resizing and centering for the model.
+
+The demo uses the trained NumPy network described below. Hand-drawn digits
+may be misclassified, especially when their shape differs from the MNIST examples.
+
 ---
 
 ## 📐 Network Architecture & Theory
